@@ -35,7 +35,7 @@
 1. Procurar um seletor mais estável
 2. Adição de atributos `data-testid` para fins de testabilidade
 3. Uso das diferentes combinações possíveis com o comando `cy.contains()`.
-Ex. `cy.contains('label', 'Phone Number').next().click() // Imaginando que o próximo elemento depois do label seria o input com o qual quero interagir`
+Ex. `cy.contains('label', 'Phone Number').next().type('5555555') // Imaginando que o próximo elemento depois do label seria o input com o qual quero interagir`
 
 </details>
 
