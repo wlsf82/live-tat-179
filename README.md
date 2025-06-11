@@ -59,12 +59,15 @@ Ex. `cy.contains('label', 'Phone Number').next().type('5555555') // Imaginando q
 
 - [`.should`](https://docs.cypress.io/api/commands/should) para _assertions_ (devido ao mecanismo de _retriability_ do Cypress)
 
-**Exemplo:**
+**Exemplos:**
 
 ```js
 cy.get('ul li').should(($listItems) => {
   cy.wrap($listItems).each(() => {/* do something with each list item */})
 })
+
+cy.get('ul li').should('have.length', 5) // Primeiro aguarda pela quantidade certa de list items
+cy.get('li').last().should('have.text', 'some-text') // Para então verificar o conteúdo do último
 
 ```
 
