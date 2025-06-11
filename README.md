@@ -62,12 +62,13 @@ Ex. `cy.contains('label', 'Phone Number').next().type('5555555') // Imaginando q
 **Exemplos:**
 
 ```js
+cy.get('ul li').should('have.length', 5) // Primeiro aguarda pela quantidade certa de list items
+cy.get('li').last().should('have.text', 'some-text') // Para então verificar o conteúdo do último
+
+// Também é possível passar ao comando .should uma função de callback a qual recebe o "sujeito" gerado pelo comando anterior
 cy.get('ul li').should(($listItems) => {
   cy.wrap($listItems).each(() => {/* do something with each list item */})
 })
-
-cy.get('ul li').should('have.length', 5) // Primeiro aguarda pela quantidade certa de list items
-cy.get('li').last().should('have.text', 'some-text') // Para então verificar o conteúdo do último
 
 ```
 
